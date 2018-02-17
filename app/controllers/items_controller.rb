@@ -1,11 +1,6 @@
 class ItemsController < ApplicationController
 
 
-  # def index
-  #   @items = Items.sort_by_value_weight
-  #   @items = Item.all
-  # end
-
   def new
     @item = Item.new
   end
@@ -14,24 +9,32 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
+
+      if @item.save
+			redirect_to item_path(@item)
+
+		else
+			flash[:notice] = "The item couldn't be saved"
 			redirect_to new_item_path(@item)
-  end
+		end
+	end
+
 
 
   def show
+    @items = Item.find_by(params[:id])
+
   end
 
   def update
+    @item = Item.find_by_id(params[:id])
+
   end
 
   def destroy
   end
 
   private
-
-  def before_item
-
-  end
 
   def item_params
     params.require(:item).permit(:name, :item_weight, :value, :category_id)

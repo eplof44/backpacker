@@ -1,6 +1,6 @@
 class Backpack < ApplicationRecord
 
-belongs_to  :trip
-belongs_to  :item
+belongs_to  :trip, required: false
+belongs_to  :item, required: false
 
 end
