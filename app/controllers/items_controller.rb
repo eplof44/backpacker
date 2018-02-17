@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.find_or_create_by(name: params[:item][:name])
 
       if @item.save
 			redirect_to item_path(@item)
@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
 
 
   def show
-    @items = Item.find_by(params[:id])
+    @item = Item.find_by(id: params[:id])
 
   end
 
