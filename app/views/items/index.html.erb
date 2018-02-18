@@ -1,8 +1,12 @@
 <h1>Items</h1>
-<ul>
-  <% @items.each do |item| %>
-    <li>
-      <%= @item.name %>
-    </li>
-  <% end %>
-</ul>
+<% @items.each do |item| %>
+  <ul>
+      <li>
+        <%= link_to item.name, item_path(item.id) %>
+      </li>
+    </div>
+  </ul>
+<% end %>
+
+
+  <%= link_to "Create Item", new_item_path %>
