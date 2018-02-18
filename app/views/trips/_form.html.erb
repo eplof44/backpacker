@@ -14,5 +14,14 @@
   <%= f.text_field :weather %><br />
   <%= f.label :completed %>:
   <%= f.check_box :completed %> <br />
+
+
+  <h3>Add Items to Backpack</h3>
+  <%= f.collection_check_boxes :item_ids, Item.all, :id, :name %>
+
+    </div>
+
+
+
   <%= f.submit "Create or Update Trip" %>
 <% end %>
