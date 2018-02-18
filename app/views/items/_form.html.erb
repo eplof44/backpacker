@@ -2,10 +2,10 @@
 <%= form_for @item do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %><br />
-  <%= f.label :item_weight %>:
+  <%= f.label :item_weight %> in pounds:
   <%= f.text_field :item_weight %><br />
-  <%= f.label :value %>:
+  <%= f.label :value %> on a scale of 1-5 (5 being most valuable):
   <%= f.text_field :value  %><br />
 
-  <%= f.submit "Create Item" %>
+  <%= f.submit "Create or Update Item" %>
 <% end %>

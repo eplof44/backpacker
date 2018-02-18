@@ -1,44 +1,53 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update]
 
+  def index
+  @items = Item.all
+  end
+
+  def show
+    @item = Item.find_by(id: params[:id])
+  end
 
   def new
     @item = Item.new
   end
 
-
-
   def create
-    @item = Item.find_or_create_by(name: params[:item][:name])
+    @item = Item.new(item_params)
 
-      if @item.save
-			redirect_to item_path(@item)
+    if @item.save
+      redirect_to item_path @item.id
+    else
+      render 'new'
+    end
+  end
 
-		else
-			flash[:notice] = "The item couldn't be saved"
-			redirect_to new_item_path(@item)
-		end
-	end
-
-
-
-  def show
-    @item = Item.find_by(id: params[:id])
-
+  def edit
   end
 
   def update
-    @item = Item.find_by_id(params[:id])
-
+    if @item.update(item_params)
+        redirect_to item_path(@item)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @item = Item.find(params[:id]).destroy
+    redirect_to items_url
   end
+
 
   private
 
-  def item_params
-    params.require(:item).permit(:name, :item_weight, :value, :category_id)
-
+  def set_item
+    @item = Item.find(params[:id])
   end
 
-end
+  def item_params
+    params.require(:item).permit(:name, :item_weight, :value, :category_ids => [], categories_attributes: [:name])
+  end
+
+  end

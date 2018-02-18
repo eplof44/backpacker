@@ -1,0 +1,18 @@
+
+<%= form_for @trip do |f| %>
+  <%= f.label :date %>:
+  <%= f.date_field :date %><br />
+  <%= f.label :location %>:
+  <%= f.text_field :location %><br />
+  <%= f.label :duration %> (in days):
+  <%= f.text_field :duration %><br />
+  <%= f.label :backpack_size %> (in liters):
+  <%= f.text_field :backpack_size %><br />
+  <%= f.label :camping_type %> (hike/drive):
+  <%= f.text_field :camping_type %><br />
+  <%= f.label :weather %>:
+  <%= f.text_field :weather %><br />
+  <%= f.label :completed %>:
+  <%= f.check_box :completed %> <br />
+  <%= f.submit "Create or Update Trip" %>
+<% end %>
