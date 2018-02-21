@@ -1,4 +1,5 @@
 
+
 <%= form_for @trip do |f| %>
   <%= f.label :date %>:
   <%= f.date_field :date %><br />
@@ -15,12 +16,23 @@
   <%= f.label :completed %>:
   <%= f.check_box :completed %> <br />
 
+<h1> Add to backpack for trip </h1>
+  <% 5.times.each do %>
 
-  <h3>Add Items to Backpack</h3>
-  <%= f.collection_check_boxes :item_ids, Item.all, :id, :name %>
+  <%= f.fields_for :items, @trip.items.build do |a| %>
+		Name <%= a.text_field :name %><br /><br />
+		Item Weight: <%= a.text_field :item_weight %><br /><br />
+		Value: <%= a.text_field :value %><br /><br />
+    <% end %>
+
+        <% end %>
+
+<h1> Already Created Items </h1>
+        <%= f.collection_check_boxes :item_ids, Item.all, :id, :name %>
 
     </div>
 
+</br>
 
 
   <%= f.submit "Create or Update Trip" %>

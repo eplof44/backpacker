@@ -8,7 +8,7 @@ accepts_nested_attributes_for :items, reject_if: proc {|attributes| attributes['
 
 def items_attributes=(item_attributes)
   item_attributes.values.each do |item_attribute|
-    if !item_attribute.empty?
+    if !item_attribute[:name].empty?
       new_item = Item.find_or_create_by(item_attribute)
       self.items << new_item
     end

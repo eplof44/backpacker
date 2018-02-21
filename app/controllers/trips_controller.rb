@@ -7,6 +7,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find_by(id: params[:id])
+
   end
 
   def new
@@ -48,7 +49,7 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:date, :location, :duration, :backpack_size, :camping_type, :weather, :completed, :item_ids => [], items_attributes: [:name])
+    params.require(:trip).permit(:date, :location, :duration, :backpack_size, :camping_type, :weather, :completed, :item_ids => [], items_attributes: [:name, :item_weight, :value])
   end
 
 end
