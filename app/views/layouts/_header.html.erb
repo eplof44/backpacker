@@ -6,6 +6,9 @@
           <li> <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></br></li>
         <% else %>
           <p>Signed in as <%= current_user.email %></p>
+          <a href="/trips"> My Trips</a>
+          <a href="/items"> My Backpack</a>
+
           <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
         <% end %>
     </ul>
