@@ -21,8 +21,8 @@
 
   <%= f.fields_for :items, @trip.items.build do |a| %>
 		Name <%= a.text_field :name %><br /><br />
-		Item Weight: <%= a.text_field :item_weight %><br /><br />
-		Value: <%= a.text_field :value %><br /><br />
+		Item Weight (in pounds): <%= a.text_field :item_weight %><br /><br />
+		Value (Scale of 1 to 5, 5 being most valuable): <%= a.text_field :value %><br /><br />
     <% end %>
 
         <% end %>
@@ -35,5 +35,5 @@
 </br>
 
 
-  <%= f.submit "Create or Update Trip" %>
+  <%= f.submit "Submit" %>
 <% end %>

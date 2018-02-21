@@ -6,8 +6,8 @@
   <%= f.text_field :item_weight %><br />
   <%= f.label :value %> on a scale of 1-5 (5 being most valuable):
   <%= f.text_field :value  %><br />
-  <%= f.collection_check_boxes :category_id, Category.all, :id, :title %>
+
+<%= f.submit "Submit" %>
 
 
-  <%= f.submit "Create or Update Gear" %>
 <% end %>

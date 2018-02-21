@@ -1,5 +1,0 @@
-class CategoriesController < ApplicationController
-
-
-
-end
