@@ -5,9 +5,10 @@ Rails.application.routes.draw do
 
   resources :items
   resources :backpacks
-  resources :categories
   resources :trips
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  resources :users do
+     resources :trips, :only => [:new, :create, :show, :index, :edit, :update]
+   end
 
 end
