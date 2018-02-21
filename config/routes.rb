@@ -11,4 +11,8 @@ Rails.application.routes.draw do
      resources :trips, :only => [:new, :create, :show, :index, :edit, :update]
    end
 
+   resources :trips do
+     resources :items, :only => [:new, :create, :show, :index, :edit, :update]
+   end
+
 end
