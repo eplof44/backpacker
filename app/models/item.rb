@@ -10,9 +10,9 @@ validates :item_weight, numericality: true
 validates :value, inclusion: { in: 1..5 }
 
 
- # def self.sort_by_value_weight
- #   items.sort_by{ |i| [t.item_weight, t.value] }
- # end
+ def self.too_heavy
+   self.sort_by { |t| [t.item_weight, t.value] }
+ end
 
 
 end
