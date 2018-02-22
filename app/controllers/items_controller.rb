@@ -1,10 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
 
-  def index
-  @items = Item.all
-
-  end
+def index
+end 
 
   def show
     @item = Item.find_by(id: params[:id])
