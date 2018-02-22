@@ -23,4 +23,14 @@ def items_attributes=(item_attributes)
 end
 
 
+  def self.completed
+    where("date <?", Date.current)
+  end
+
+  def self.upcoming
+    where("date >?", Date.current)
+  end
+
+
+
 end
