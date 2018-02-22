@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
 
-def index
-  @items = Item.all.where(user: current_user)
-end
+  def index
+    @items = Item.all.where(user: current_user)
+  end
 
   def show
   end
@@ -25,10 +25,10 @@ end
 
   def edit
   end
-
+  
   def update
     if @item.update(item_params)
-        redirect_to item_path(@item)
+      redirect_to item_path(@item)
     else
       render 'edit'
     end
@@ -50,4 +50,4 @@ end
     params.require(:item).permit(:name, :item_weight, :value)
   end
 
-  end
+end

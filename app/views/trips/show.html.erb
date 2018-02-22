@@ -3,11 +3,15 @@
 Trip Date: <h2> <%= @trip.date %> </h2>
 Trip Duration: <h2><%= @trip.duration %> days </h2>
 Backpack Size: <h2><%= @trip.backpack_size %> liters </h2>
+Camping Type: <h2><%= @trip.camping_type %> </h2>
+
 Weather: <h2><%= @trip.weather %>  </h2>
+
+<h2> This is what you are bringing.</h2>
 
 <% @trip.items.each do |item| %>
        <li><%= item.name %> </li>
-   <% end %>
+<% end %>
 
   <%= link_to 'Edit Trip', edit_trip_path(@trip) %>
 

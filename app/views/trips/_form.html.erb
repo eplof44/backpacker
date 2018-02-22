@@ -1,49 +1,49 @@
 <% if @trip.errors.any? %>
-  <div id = "error_explanation">
-    <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+<div id = "error_explanation">
+  <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
 
-    <ul>
+  <ul>
     <% @trip.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <li><%= msg %></li>
     <% end %>
-    </ul>
-  </div>
+  </ul>
+</div>
 <% end %>
 
 
 <%= form_for @trip do |f| %>
-  <%= f.label :date %>:
-  <%= f.date_field :date %><br />
-  <%= f.label :location %>:
-  <%= f.text_field :location %><br />
-  <%= f.label :duration %> (in days):
-  <%= f.text_field :duration %><br />
-  <%= f.label :backpack_size %> (in liters):
-  <%= f.text_field :backpack_size %><br />
-  <%= f.label :camping_type %> (hike/drive):
-  <%= f.text_field :camping_type %><br />
-  <%= f.label :weather %>:
-  <%= f.text_field :weather %><br />
+<%= f.label :date %>:
+<%= f.date_field :date %><br />
+<%= f.label :location %>:
+<%= f.text_field :location %><br />
+<%= f.label :duration %> (in days):
+<%= f.text_field :duration %><br />
+<%= f.label :backpack_size %> (in liters):
+<%= f.text_field :backpack_size %><br />
+<%= f.label :camping_type %> (hike/drive):
+<%= f.text_field :camping_type %><br />
+<%= f.label :weather %>:
+<%= f.text_field :weather %><br />
 
 
 <h1> Add to backpack for trip </h1>
-  <% 5.times.each do %>
+<% 5.times.each do %>
 
-  <%= f.fields_for :items, @trip.items.build do |a| %>
-		Name <%= a.text_field :name %><br /><br />
-		Item Weight (in pounds): <%= a.text_field :item_weight %><br /><br />
-		Value (Scale of 1 to 5, 5 being most valuable): <%= a.text_field :value %><br /><br />
-    <% end %>
+<%= f.fields_for :items, @trip.items.build do |a| %>
+Name <%= a.text_field :name %><br /><br />
+Item Weight (in pounds): <%= a.text_field :item_weight %><br /><br />
+Value (Scale of 1 to 5, 5 being most valuable): <%= a.text_field :value %><br /><br />
+<% end %>
 
-        <% end %>
+<% end %>
 
 <h1> Already Created Items </h1>
-        <%= f.collection_check_boxes :item_ids, Item.all, :id, :name %>
+<%= f.collection_check_boxes :item_ids, Item.all, :id, :name %>
 
-    </div>
+</div>
 
 </br>
 
 
-  <%= f.submit "Submit" %>
+<%= f.submit "Submit" %>
 <% end %>
