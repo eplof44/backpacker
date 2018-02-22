@@ -10,9 +10,10 @@ validates :item_weight, numericality: true
 validates :value, inclusion: { in: 1..5 }
 
 
- def self.too_heavy
-   self.sort_by { |t| [t.item_weight, t.value] }
- end
-
+def too_heavy
+  if item.item_weight = 10 && item.value <=3
+    return 'you might want to remove this item. seems heavy'
+end
+end
 
 end
