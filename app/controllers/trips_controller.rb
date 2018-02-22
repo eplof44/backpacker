@@ -2,14 +2,12 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
 
   def index
-    
-  @trips = Trip.all.where(user: current_user)
+
+    @trips = Trip.all.where(user: current_user)
 
   end
 
   def show
-    @trip = Trip.find_by(id: params[:id])
-
   end
 
   def new

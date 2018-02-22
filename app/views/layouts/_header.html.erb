@@ -7,7 +7,9 @@
         <% else %>
           <p>Signed in as <%= current_user.email %></p>
           <li> <%= link_to "My Trips",  trips_path %> </li>
-          <li> <%= link_to "My Backpack", items_path %> </li>
+          <li> <%= link_to "My Gear", items_path %> </li>
+          <li> <%= link_to "Create Gear", new_item_path %> </li>
+          <li> <%= link_to "Create Trip", new_trip_path %> </li>
 
           <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
         <% end %>

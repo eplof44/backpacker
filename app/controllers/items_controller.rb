@@ -3,11 +3,9 @@ class ItemsController < ApplicationController
 
 def index
   @items = Item.all.where(user: current_user)
-
 end
 
   def show
-    @item = Item.find_by(id: params[:id])
   end
 
   def new

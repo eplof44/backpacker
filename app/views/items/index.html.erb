@@ -1,4 +1,4 @@
-<h1>Here's whats in your backpack:</h1>
+<h1>Items You've Created:</h1>
 <% @items.each do |item| %>
   <li>
     <%= link_to item.name, item_path(item.id)%>
@@ -7,4 +7,4 @@
 
 
 
-<%= link_to "Add more gear", new_item_path %>
+<%= link_to "Create more gear", new_item_path %>
