@@ -19,17 +19,20 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path @item.id
     else
+      flash[:notice] = "The item couldn't be saved"
       render 'new'
     end
   end
 
   def edit
   end
-  
+
   def update
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
+      flash[:notice] = "The item couldn't be saved"
+
       render 'edit'
     end
   end

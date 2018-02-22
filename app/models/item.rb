@@ -6,7 +6,6 @@ has_many  :trips, through: :backpacks
 belongs_to :user, required: false
 
 validates :name, presence: true
-validates :name, uniqueness: true
 validates :item_weight, numericality: true
 validates :value, inclusion: { in: 1..5 }
 

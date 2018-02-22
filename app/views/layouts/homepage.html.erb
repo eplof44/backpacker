@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Backpacker</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="assets/stylesheets/ap.css" />
+
+    <body class="subpage">
+
+    		<header id="header">
+    			<div class="inner">
+    				<nav id="nav">
+               <%= render partial: 'layouts/navbar' %>
+    				</nav>
+    			</div>
+    		</header>
+
+      <%= yield %>
+    </body>
+</html>

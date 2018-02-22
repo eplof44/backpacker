@@ -31,9 +31,6 @@ end
     where("date >?", Date.current)
   end
 
-  def self.too_heavy
-  
-  end
-
+ 
 
 end

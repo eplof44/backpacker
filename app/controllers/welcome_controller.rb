@@ -1,7 +1,7 @@
 class WelcomeController < ActionController::Base
 
   def home
-    render :layout => 'application'
+    render :layout => 'homepage'
   end
 
 end

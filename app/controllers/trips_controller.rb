@@ -21,6 +21,7 @@ class TripsController < ApplicationController
     if @trip.save
       redirect_to trip_path @trip.id
     else
+      flash[:notice] = "The trip couldn't be saved"
       render 'new'
     end
   end
@@ -32,6 +33,7 @@ class TripsController < ApplicationController
     if @trip.update(trip_params)
       redirect_to trip_path(@trip)
     else
+      flash[:notice] = "The trip couldn't be saved"
       render 'edit'
     end
   end
