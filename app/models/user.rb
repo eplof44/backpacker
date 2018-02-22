@@ -1,8 +1,7 @@
 class User < ApplicationRecord
 
   has_many :trips
-  has_one :current_trip, class_name: 'Trip'
-
+  has_many :items 
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

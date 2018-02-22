@@ -2,7 +2,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
 
 def index
-end 
+  @items = Item.all.where(user: current_user)
+
+end
 
   def show
     @item = Item.find_by(id: params[:id])
@@ -14,6 +16,7 @@ end
 
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
 
     if @item.save
       redirect_to item_path @item.id
