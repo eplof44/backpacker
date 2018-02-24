@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @items = Item.all.where(user: current_user)
   end
 
   def new
@@ -15,7 +16,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    
+
 
     if @item.save
       redirect_to item_path @item.id
