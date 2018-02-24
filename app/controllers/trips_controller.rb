@@ -8,6 +8,8 @@ class TripsController < ApplicationController
   end
 
   def show
+    @trips = Trip.all.where(user: current_user)
+
   end
 
   def new
@@ -17,6 +19,8 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
+    @trips = Trip.all.where(user: current_user)
+  
 
     if @trip.save
       redirect_to trip_path @trip.id
@@ -25,6 +29,8 @@ class TripsController < ApplicationController
       render 'new'
     end
   end
+
+
 
   def edit
   end

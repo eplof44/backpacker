@@ -9,14 +9,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="assets/stylesheets/ap.css" />
 
-    <body class="subpage">
 
     		<header id="header">
-    			<div class="inner">
-    				<nav id="nav">
                <%= render partial: 'layouts/navbar' %>
-    				</nav>
-    			</div>
     		</header>
 
       <%= yield %>

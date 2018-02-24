@@ -31,6 +31,6 @@ end
     where("date >?", Date.current)
   end
 
- 
+
 
 end

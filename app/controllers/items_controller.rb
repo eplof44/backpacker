@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    
 
     if @item.save
       redirect_to item_path @item.id
@@ -29,6 +30,8 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
+      @items = Item.all.where(user: current_user)
+
       redirect_to item_path(@item)
     else
       flash[:notice] = "The item couldn't be saved"
