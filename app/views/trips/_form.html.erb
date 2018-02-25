@@ -40,10 +40,7 @@
 
   <h3> Add More of Your Created Gear </h3>
   <%= collection_check_boxes :trip, :item_ids, current_user.items, :id, :name %>
-</div>
-
-
-  <div class = "pure-form pure-button-primary l-box-lrg pure-u-1 pure-u-md-2-5 ">
+<br>
     <%= f.submit "Submit" %>
   </div>
   <% end %>

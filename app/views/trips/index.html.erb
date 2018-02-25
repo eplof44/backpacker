@@ -9,7 +9,7 @@
   </ul>
 <% end %>
 
-<h2 div class ="content-head"> Upcoming Trips </h2> 
+<h2 div class ="content-head"> Upcoming Trips </h2>
 
 <% @trips.upcoming.each do |trip| %>
   <ul>
@@ -19,5 +19,8 @@
   </ul>
 <% end %>
 
+<div class ="splash-subhead">
 
   <%= link_to "Create Trip", new_trip_path %>
+
+</div>
