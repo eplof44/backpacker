@@ -1,19 +1,22 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Backpacker</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Backpacker</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= analytics_init if Rails.env.production? %>
+</head>
+<body>
+  <div class = "splash-container">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="assets/stylesheets/ap.css" />
+  <%= render 'layouts/navbar' %>
 
+  <h1 class = "splash-head splash" id ="parallelogram">
+    BackPacker
+  </div>
+  </div>
 
-    		<header id="header">
-               <%= render partial: 'layouts/navbar' %>
-    		</header>
-
-      <%= yield %>
-    </body>
+<%= yield %>
+</body>
 </html>

@@ -1,26 +1,23 @@
-<h2> Completed Trips </h2>
+<h2 div class ="content-head"> Completed Trips </h2>
+
 
 <% @trips.completed.each do |trip| %>
   <ul>
       <li>
         <%= link_to trip.location, trip_path(trip.id) %>
       </li>
-    </div>
   </ul>
 <% end %>
 
-
-<h2> Upcoming Trips </h2>
+<h2 div class ="content-head"> Upcoming Trips </h2> 
 
 <% @trips.upcoming.each do |trip| %>
   <ul>
       <li>
         <%= link_to trip.location, trip_path(trip.id) %>
       </li>
-    </div>
   </ul>
 <% end %>
-
 
 
   <%= link_to "Create Trip", new_trip_path %>
