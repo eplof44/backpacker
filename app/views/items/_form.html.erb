@@ -10,15 +10,18 @@
   </div>
 <% end %>
 
+<div class= "pure-form l-box-lrg pure-u-1 pure-u-md-2-5 ">
 <%= form_for @item do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %><br />
-  <%= f.label :item_weight %> in pounds:
+  <%= f.label :item_weight %> <label> (in pounds): </label>
   <%= f.text_field :item_weight %><br />
-  <%= f.label :value %> on a scale of 1-5 (5 being most valuable):
+  <%= f.label :value %> <label> on a scale of 1-5 (5 being most valuable): </label>
   <%= f.text_field :value  %><br />
+</div>
 
+<div class= "pure-form pure-button-primary l-box-lrg pure-u-1 pure-u-md-2-5 ">
 <%= f.submit "Submit" %>
-
+</div>
 
 <% end %>

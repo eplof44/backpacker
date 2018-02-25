@@ -10,38 +10,40 @@
 </div>
 <% end %>
 
+<div class= "l-box-lrg pure-u-1 pure-u-md-2-5 pure-form">
 
-<%= form_for @trip do |f| %>
-<%= f.label :date %>:
-<%= f.date_field :date %><br />
-<%= f.label :location %>:
-<%= f.text_field :location %><br />
-<%= f.label :duration %> (in days):
-<%= f.text_field :duration %><br />
-<%= f.label :backpack_size %> (in liters):
-<%= f.text_field :backpack_size %><br />
-<%= f.label :camping_type %> (hike/drive):
-<%= f.text_field :camping_type %><br />
-<%= f.label :weather %>:
-<%= f.text_field :weather %><br />
-
-
-<h1> Add New Gear to Backpack</h1>
-<% 3.times.each do %>
-
-<%= f.fields_for :items, @trip.items.build do |a| %>
-Name <%= a.text_field :name %><br /><br />
-Item Weight (in pounds): <%= a.text_field :item_weight %><br /><br />
-Value (Scale of 1 to 5, 5 being most valuable): <%= a.text_field :value %><br /><br />
-<% end %>
-
-<% end %>
-
-<h1> Add More of Your Created Gear </h1>
-<%= collection_check_boxes :trip, :item_ids, current_user.items, :id, :name %>
-
-</br>
+  <%= form_for @trip do |f| %>
+  <%= f.label :date %>:
+  <%= f.date_field :date %><br />
+  <%= f.label :location %>:
+  <%= f.text_field :location %><br />
+  <%= f.label :duration %> <label> (in days): </label>
+  <%= f.text_field :duration %><br />
+  <%= f.label :backpack_size %> <label> (in liters): </label>
+  <%= f.text_field :backpack_size %><br />
+  <%= f.label :camping_type %> <label> (hike/drive): </label>
+  <%= f.text_field :camping_type %><br />
+  <%= f.label :weather %>:
+  <%= f.text_field :weather %><br />
 
 
-<%= f.submit "Submit" %>
-<% end %>
+  <h3> Add New Gear to Backpack</h3>
+  <% 3.times.each do %>
+
+  <%= f.fields_for :items, @trip.items.build do |a| %>
+    <label> Name </label> <%= a.text_field :name %><br /><br />
+    <label> Weight (in pounds)</label>  <%= a.text_field :item_weight %><br /><br />
+    <label> Value (1 to 5) </label> <%= a.text_field :value %><br /><br />
+  <% end %>
+  <% end %>
+
+
+  <h3> Add More of Your Created Gear </h3>
+  <%= collection_check_boxes :trip, :item_ids, current_user.items, :id, :name %>
+</div>
+
+
+  <div class = "pure-form pure-button-primary l-box-lrg pure-u-1 pure-u-md-2-5 ">
+    <%= f.submit "Submit" %>
+  </div>
+  <% end %>

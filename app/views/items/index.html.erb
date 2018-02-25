@@ -1,11 +1,15 @@
-<h1>Your Gear:</h1>
+<h2 div class ="content-head"> Your Gear </h2>
+
 <% @items.each do |item| %>
+<ul>
 <li>
   <%= link_to item.name, item_path(item.id)%>
-  <% end %>
 </li>
 
+</ul>
+<% end %>
 
+<h3>
 <% if @items.too_heavy?.each do |item| %>
 <p>Free advice: You might not want to pack these items since they seem too heavy for the value:</p>
 <li> <%= item.name %> weighs <%= item.item_weight %> lbs with a value of <%= item.value %> </li>
@@ -13,10 +17,9 @@
 
 <% end -%>
 
-
+</h3>
 
 <br>
-
 
 
 <%= link_to "Create more gear", new_item_path %>

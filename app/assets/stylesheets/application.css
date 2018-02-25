@@ -28,7 +28,10 @@ h3,
 h4,
 h5,
 h6,
-label {
+li,
+a,
+label
+{
     color: #ffffff;
 }
 
@@ -60,18 +63,22 @@ label {
  * -- PURE FORM STYLES --
  * Style the form inputs and labels
  */
+
+
 .pure-form label {
     margin: 1em 0 0;
     font-weight: bold;
     font-size: 100%;
+
 }
 
 .pure-form input[type] {
-    border: 2px solid #ddd;
-    box-shadow: none;
+    border: 2px solid #fff;
+    background-color: white;
+    align-items: center;
     font-size: 100%;
-    width: 100%;
     margin-bottom: 1em;
+
 }
 
 /*
@@ -88,7 +95,7 @@ label {
 a.pure-button-primary {
     background: white;
     color: #1f8dd6;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 120%;
 }
 
@@ -168,7 +175,7 @@ a.pure-button-primary {
 }
 
 .inner {
-    background: url('https://images.unsplash.com/photo-1473798778802-efbba458877d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7f8f215d38f5f46e61f46ff1079cc3fb&auto=format&fit=crop&w=952&q=80');
+    background: url('https://images.unsplash.com/photo-1457595836143-fc1b9f5ebb6b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=da77a2498afcedd051d1bcb48a2e0f67&auto=format&fit=crop&w=750&q=80');
     z-index: 1;
     overflow: scroll;
     min-height: 100%;
@@ -241,6 +248,7 @@ a.pure-button-primary {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
+    margin-left: 1em;
 }
 
 /* This is a modifier class used when the content-head is inside a ribbon */
@@ -265,7 +273,7 @@ a.pure-button-primary {
 /* This is the class used for the footer */
 .footer {
     background: #111;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
