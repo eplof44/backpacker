@@ -1,24 +1,25 @@
-# README
+# About BackPacker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BackPacker is an app that allows you to track camping trips and what you are packing on those trips.
 
-Things you may want to cover:
+## Install & Usage Instructions
 
-* Ruby version
+To install, clone or fork this repository, then run `bundle install` from the terminal prompt.
+To create a new version of the database, populate it with seed data, and get started, run the following commands from the terminal prompt:
 
-* System dependencies
+```ruby
+rake db:drop
+rake db:migrate
+rake db:seed
+rails s
+```
 
-* Configuration
+In your browser, navigate to `localhost:3000`.
 
-* Database creation
+## Contributions
 
-* Database initialization
+Bug reports and pull requests are welcome on GitHub at https://github.com/eplof44/backpacker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is available as open source under the terms of the [MIT License](opensource.org/licenses/MIT).
