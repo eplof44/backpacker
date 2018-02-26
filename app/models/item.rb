@@ -10,7 +10,7 @@ validates :item_weight, numericality: true
 validates :value, inclusion: { in: 1..5 }
 
 def self.too_heavy?
-  Item.where("item_weight > 10")
+  Item.where("item_weight > 10 AND value < 3")
 end
 
 end
