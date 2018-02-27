@@ -54,7 +54,7 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:date, :location, :duration, :backpack_size, :camping_type, :weather, :item_ids => [], items_attributes: [:name, :item_weight, :value])
+    params.require(:trip).permit(:date, :location, :duration, :backpack_size, :camping_type, :weather, :item_ids => [], items_attributes: [:user_id, :name, :item_weight, :value])
   end
 
 end
