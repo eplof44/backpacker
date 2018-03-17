@@ -1,6 +1,8 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
 
+
+
   def index
 
     @trips = Trip.all.where(user: current_user)
@@ -9,7 +11,6 @@ class TripsController < ApplicationController
 
   def show
     @trips = Trip.all.where(user: current_user)
-
   end
 
   def new
@@ -26,7 +27,6 @@ class TripsController < ApplicationController
       render 'new'
     end
   end
-
 
 
   def edit

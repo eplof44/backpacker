@@ -22,6 +22,13 @@ def items_attributes=(item_attributes)
   end
 end
 
+def current_backpack_weight
+  weight = 0
+  self.items.each do |item|
+    weight += item.item_weight
+  end
+    weight
+end
 
   def self.completed
     where("date <?", Date.current)
