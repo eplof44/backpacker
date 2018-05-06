@@ -1,13 +1,37 @@
+$()) => {
+  bindClickHandlers()
+})
+
+const bindClickHandlers = () => {
+  $('.all_trips').on('click', (e)) => {
+    e.preventDefault()
+    fetch(`/trips.json`)
+      .then(res => res.json())
+      .then(trips =>)
+      $('#app-container').html(.'hello')
+
+  })
+})
+}
+
+
 $(document).on('turbolinks:load', function() {
 
-  class Trip{
-    //create trip object model using constructor
-  constructor(trip){
-  this.date = trip.date
-  this.location = trip.location
-  this.duration = trip.duration
-  this.backpack_size = trip.backpack_size
-  this.camping_type = trip.camping_type
-  this.weather = trip.weather
-  this.completed = trip.completed
-  }
+
+$(function () {
+  $(".js-next").on("click", function() {
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.getJSON("/trips/" + nextId + ".json", function(data) {
+      $(".tripLocation").text(data["location"]);
+      $(".tripDate").text(data["date"]);
+      $(".tripDuration").text(data["duration"]);
+      $(".tripBackpack").text(data["backpack_size"]);
+      $(".tripType").text(data["camping_type"]);
+      $(".tripWeather").text(data["weather"]);
+
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", data["id"]);
+    });
+  });
+});
+}
