@@ -2,8 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
 
   def index
-    @items = Item.all.where(user: current_user)
-  end
+    @items = Item.all
+       respond_to do |format|
+         format.html {render :index}
+         format.json {render json: @items}
+       end
+     end
 
   def show
     @items = Item.all.where(user: current_user)
