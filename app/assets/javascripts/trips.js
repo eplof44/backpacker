@@ -1,27 +1,30 @@
-$()) => {
-  bindClickHandlers()
-})
+console.log('trips js loaded')
 
-const bindClickHandlers = () => {
-  $('.all_trips').on('click', (e)) => {
-    e.preventDefault()
-    fetch(`/trips.json`)
-      .then(res => res.json())
-      .then(trips =>)
-      $('#app-container').html(.'hello')
+// $(() => {
+//   bindClickHandlers()
+// })
+//
+// const bindClickHandlers = () => {
+//   $('.all_trips').on('click', (e) => {
+//     e.preventDefault()
+//     fetch(`/trips.json`)
+//       .then(res => res.json())
+//       .then(trips => {
+//       $('#app-container').html('hello')
+//   })
+// })
+// }
 
-  })
-})
-}
-
-
-$(document).on('turbolinks:load', function() {
 
 
 $(function () {
-  $(".js-next").on("click", function() {
+  $(".js-next").on("click", function(e) {
+    e.preventDefault()
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.getJSON("/trips/" + nextId + ".json", function(data) {
+      console.log(data)
+
+      let id = data["id"]
       $(".tripLocation").text(data["location"]);
       $(".tripDate").text(data["date"]);
       $(".tripDuration").text(data["duration"]);
@@ -33,5 +36,4 @@ $(function () {
       $(".js-next").attr("data-id", data["id"]);
     });
   });
-});
-}
+})
