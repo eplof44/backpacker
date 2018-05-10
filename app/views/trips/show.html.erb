@@ -1,23 +1,24 @@
 
 
 <h2 div class ="content-head"> Location: <span class ="tripLocation"><%= @trip.location %> </span></h2>
-<h2 div class ="content-head tripDate"> Date: <%= @trip.date %> </h2>
-<h2 div class ="content-head tripDuration"> Duration: <%= @trip.duration %> days </h2>
-<h2 div class ="content-head tripBackpack"> Backpack Size: <%= @trip.backpack_size %> liters </h2>
-<h2 div class ="content-head tripType"> Camping Type: <%= @trip.camping_type %> </h2>
-<h2 div class ="content-head tripWeather"> Weather: <%= @trip.weather %>  </h2>
+<h2 div class ="content-head"> Date: <span class ="tripDate"> <%= @trip.date %> </span></h2>
+<h2 div class ="content-head"> Duration: <span class ="tripDuration"> <%= @trip.duration %> </span> days  </h2>
+<h2 div class ="content-head"> Backpack Size: <span class ="tripBackpack"> <%= @trip.backpack_size %> </span> liters </h2>
+<h2 div class ="content-head"> Camping Type: <span class ="tripType"> <%= @trip.camping_type %> </span> </h2>
+<h2 div class ="content-head"> Weather: <span class = "tripWeather"> <%= @trip.weather %> </span> </h2>
 
 
 
-<h2 div class ="content-head"> This is what you have packed.</h2>
+<h2 div class ="content-head trip"> This is what you have packed.</h2>
 
-<% @trip.items.each do |item| %>
+<div ="tripGear"> <% @trip.items.each do |item| %>
 <ul>
     <li>
       <%= link_to item.name, item_path(item.id)%>
   </li>
 </ul>
 <% end %>
+</div>
 
 <h2 div class ="content-head"> Your backpack weighs <%= @trip.current_backpack_weight %> pound(s). </h2>
 
