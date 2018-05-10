@@ -8,17 +8,19 @@
 <h2 div class ="content-head"> Weather: <span class = "tripWeather"> <%= @trip.weather %> </span> </h2>
 
 
+<h2 div class ="content-head"> This is what you have packed:</h2>
 
-<h2 div class ="content-head trip"> This is what you have packed.</h2>
+<div class = "tripItems">
+</div>
 
-<div ="tripGear"> <% @trip.items.each do |item| %>
+<!-- <% @trip.items.each do |item| %>
 <ul>
     <li>
       <%= link_to item.name, item_path(item.id)%>
   </li>
 </ul>
-<% end %>
-</div>
+<% end %> -->
+
 
 <h2 div class ="content-head"> Your backpack weighs <%= @trip.current_backpack_weight %> pound(s). </h2>
 
