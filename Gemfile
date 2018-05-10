@@ -36,7 +36,6 @@ gem 'omniauth-google-oauth2'
 gem 'pry-rails'
 gem 'active_model_serializers'
 gem 'jquery-rails'
-gem 'jquery-turbolinks'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

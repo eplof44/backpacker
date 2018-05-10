@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
 
 def index
-  @trips = Trip.all
+  @trips = Trip.all.where(user: current_user)
   respond_to do |format|
     format.html { render :index }
     format.json {render json: @trips }
