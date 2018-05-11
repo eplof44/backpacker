@@ -50,14 +50,14 @@ function renderTrips(tripsData) {
     })
 }
 
-//trying to get items to display on items show page 
+//trying to get items to display on items show page
 $(function () {
   $(".backpack-details").on("click", function(e) {
     e.preventDefault()
-  $.getJSON("/items/" , function(data) {
+  $('.backpacks-container').append('chicken feet')
 });
 });
-});
+
 
 
 
