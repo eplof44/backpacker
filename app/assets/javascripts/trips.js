@@ -13,6 +13,8 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
+      $(".tripWeight").text(data["current_backpack_weight"]);
+
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
     });
@@ -33,7 +35,7 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
-      $('.tripItems').text(data["trip.items"]);
+      $(".tripWeight").text(data["current_backpack_weight"]);
 
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
@@ -41,14 +43,12 @@ $(function () {
   });
 })
 
-// function getItems() {
-//   $('.tripItems').append("hey")
-// };
-//can't get items to load
-// function getItems(item){
-//   var string = '';
-//   $.getJSON("trips.html", function(data){
-//       $.each(data, function(k, v) {
-//         $('.tripItems').append(string);
-// });
-//   });
+
+$(function(){
+    // use Jquery event handler for whn link is clicked
+  $("a.backpack-details").on("click", function(e) {
+    e.preventDefault()
+
+    $('.trips-container').append('chicken feet');
+});
+})
