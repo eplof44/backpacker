@@ -19,7 +19,7 @@ function Trip(trip) {
 Trip.prototype.indexTemplate = function() {
     let tripHtml = `
     <a href="/trips/${ this.id }" data-id="${this.id}">
-      <h3>${ this.location }</h3>
+     <li> ${ this.location }</li>
     </a>
     `
     return tripHtml
