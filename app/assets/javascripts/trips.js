@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
-  getTripsData()
-  showTrip()
+  getTrips()
 })
 
 //create trip object
@@ -26,7 +25,26 @@ Trip.prototype.indexTemplate = function() {
     return tripHtml
 }
 
+//get all trips to show up via json when all-trips button is clicked by rendering the data for the trip
+function getTrips() {
+    $("a.all-trips").on("click", function(e) {
+        e.preventDefault()
+        $('#trips-container').html('')
 
+        $.getJSON(this.href, function(tripsData) {
+            renderTrips(tripsData)
+        })
+    })
+}
+
+//append trip link to dom when index trips are loaded
+function renderTrips(tripsData) {
+    tripsData.forEach(trip => {
+        let newTrip = new Trip(trip)
+        let tripHtml = newTrip.indexTemplate()
+        $('#trips-container').append(tripHtml)
+    })
+}
 
 //previous button
 $(function () {
