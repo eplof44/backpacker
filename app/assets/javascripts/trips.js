@@ -1,7 +1,12 @@
 
 $(document).ready(function () {
+<<<<<<< HEAD
 
   getTrips()
+=======
+  getTripsData()
+  showTrip()
+>>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
 })
 
 //create Javascript model object
@@ -26,6 +31,7 @@ Trip.prototype.indexTemplate = function() {
     return tripHtml
 }
 
+<<<<<<< HEAD
 //render all trips via json
 function getTrips() {
     $("a.all-trips").on("click", function(e) {
@@ -49,6 +55,9 @@ function renderTrips(tripsData) {
         $('.main').append(tripHtml)
     })
 }
+=======
+
+>>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
 
 
 //trying to get items to display on items show page
