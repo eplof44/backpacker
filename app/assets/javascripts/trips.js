@@ -1,5 +1,10 @@
 
+$(document).ready(function () {
+  getTripsData()
+  showTrip()
+})
 
+//create trip object
 function Trip(trip) {
     this.id = trip.id
     this.location = trip.location
@@ -11,9 +16,19 @@ function Trip(trip) {
     trip.items = trip.items
 }
 
+//create protoytype to generate link to trip to show trips on index page with a link
+Trip.prototype.indexTemplate = function() {
+    let tripHtml = `
+    <a href="/trips/${ this.id }" data-id="${this.id}">
+      <h3>${ this.location }</h3>
+    </a>
+    `
+    return tripHtml
+}
 
 
 
+//previous button
 $(function () {
   $(".js-back").on("click", function(e) {
     e.preventDefault()
@@ -35,7 +50,7 @@ $(function () {
   });
 })
 
-
+//next button
 $(function () {
   $(".js-next").on("click", function(e) {
     e.preventDefault()
@@ -59,7 +74,7 @@ $(function () {
 
 
 
-
+//get items to show on next/previous
 // $(function () {
 //   $(".backpack-details").on("click", function(e) {
 //     e.preventDefault()
