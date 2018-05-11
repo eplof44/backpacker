@@ -3,7 +3,7 @@ $(document).ready(function () {
   getTrips()
 })
 
-//create trip object
+//create Javascript model object
 function Trip(trip) {
     this.id = trip.id
     this.location = trip.location
@@ -15,7 +15,7 @@ function Trip(trip) {
     trip.items = trip.items
 }
 
-//create protoytype to generate link to trip to show trips on index page with a link
+//create protoytype method to generate link to trip to show trips on index page with a link
 Trip.prototype.indexTemplate = function() {
     let tripHtml = `
     <a href="/trips/${ this.id }" data-id="${this.id}">
@@ -25,7 +25,7 @@ Trip.prototype.indexTemplate = function() {
     return tripHtml
 }
 
-//get all trips to show up via json when all-trips button is clicked by rendering the data for the trip
+//render all trips via json
 function getTrips() {
     $("a.all-trips").on("click", function(e) {
         e.preventDefault()
@@ -46,7 +46,7 @@ function renderTrips(tripsData) {
     })
 }
 
-//previous button
+//trip show page previous button
 $(function () {
   $(".js-back").on("click", function(e) {
     e.preventDefault()
@@ -68,7 +68,7 @@ $(function () {
   });
 })
 
-//next button
+//trip show page next button
 $(function () {
   $(".js-next").on("click", function(e) {
     e.preventDefault()
