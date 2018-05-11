@@ -1,27 +1,5 @@
-
 $(document).ready(function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
   getTrips()
-=======
-  getTripsData()
-  showTrip()
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
-=======
-  getTripsData()
-  showTrip()
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
-=======
-  getTripsData()
-  showTrip()
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
-=======
-  getTripsData()
-  showTrip()
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
 })
 
 //create Javascript model object
@@ -40,22 +18,15 @@ function Trip(trip) {
 Trip.prototype.indexTemplate = function() {
     let tripHtml = `
     <a href="/trips/${ this.id }" data-id="${this.id}">
-     <li> ${ this.location }</li>
+      <h3>${ this.location }</h3>
     </a>
     `
     return tripHtml
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 //render all trips via json
 function getTrips() {
     $("a.all-trips").on("click", function(e) {
-        $('.main').removeClass('splash-container')
-        $('.main').addClass('inner')
-        $('.main').html('')
         e.preventDefault()
         $('#trips-container').html('')
 
@@ -70,34 +41,9 @@ function renderTrips(tripsData) {
     tripsData.forEach(trip => {
         let newTrip = new Trip(trip)
         let tripHtml = newTrip.indexTemplate()
-        $('.main').append(tripHtml)
+        $('#trips-container').append(tripHtml)
     })
 }
-=======
-
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
-
-
-//trying to get items to display on items show page
-$(function () {
-  $(".backpack-details").on("click", function(e) {
-    e.preventDefault()
-  $('.backpacks-container').append('chicken feet')
-});
-});
-
-
-
-
-=======
-
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
-=======
-
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
-=======
-
->>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
 
 //trip show page previous button
 $(function () {
@@ -142,22 +88,3 @@ $(function () {
     });
   });
 })
-
-
-
-//get items to show on next/previous
-// $(function () {
-//   $(".backpack-details").on("click", function(e) {
-//     e.preventDefault()
-//
-//     $.get(this.href + ".json", function(data) {
-//       var $ol = $("div.backpack-container ol")
-//       $ol.html("")
-//
-//       data.forEach(function(trip) {
-//           $ol.append("<li>" + trip.location + "</li>")
-//
-//       });
-//     });
-//   });
-// });

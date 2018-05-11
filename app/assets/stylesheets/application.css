@@ -177,25 +177,6 @@ a.pure-button-primary {
     position: fixed !important;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* .main {
-  z-index: 1;
-  overflow: scroll;
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 88%;
-  top: 0;
-  left: 0;
-  position: fixed !important;
-} */
-
-=======
->>>>>>> parent of ad70476... attempt at adding items to trip not working still
-=======
->>>>>>> parent of ad70476... attempt at adding items to trip not working still
 .inner {
     background: url('https://images.unsplash.com/photo-1457595836143-fc1b9f5ebb6b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=da77a2498afcedd051d1bcb48a2e0f67&auto=format&fit=crop&w=750&q=80');
     z-index: 1;

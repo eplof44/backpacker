@@ -1,7 +1,8 @@
-class WelcomeController < ApplicationController
+
+class WelcomeController < ActionController::Base
 
   def home
-    #render :layout => 'homepage'
+    render :layout => 'homepage'
   end
 
 end
