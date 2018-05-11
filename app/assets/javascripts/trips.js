@@ -3,8 +3,13 @@ $(document).ready(function () {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   getTrips()
+=======
+  getTripsData()
+  showTrip()
+>>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
 =======
   getTripsData()
   showTrip()
@@ -41,6 +46,7 @@ Trip.prototype.indexTemplate = function() {
     return tripHtml
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,6 +89,9 @@ $(function () {
 
 
 
+=======
+
+>>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
 =======
 
 >>>>>>> parent of 28a4e7a... gettrips and render trips finally shows the trip html on the index page
