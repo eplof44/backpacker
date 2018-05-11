@@ -1,26 +1,15 @@
 
 
-
-$(function () {
-  $(".all-trips").on("click", function(e) {
-    e.preventDefault()
-
-    $.get(this.href + ".json", function(data) {
-      var $ol = $("div.trips-container ol")
-      $ol.html("")
-      let tripHtml = `
-    <a href="/trips/${ this.id }"  >
-      <h3>${ this.location }</h3>
-    </a>
-    `
-      data.forEach(function(trip) {
-          $ol.append(tripHtml)
-
-      });
-    });
-  });
-});
-
+function Trip(trip) {
+    this.id = trip.id
+    this.location = trip.location
+    this.duration = trip.duration
+    this.backpack_size = trip.backpack_size
+    trip.camping_type = trip.camping_type
+    trip.weather = trip.weather
+    trip.user = trip.user
+    trip.items = trip.items
+}
 
 
 
@@ -71,18 +60,18 @@ $(function () {
 
 
 
-$(function () {
-  $(".backpack-details").on("click", function(e) {
-    e.preventDefault()
-
-    $.get(this.href + ".json", function(data) {
-      var $ol = $("div.backpack-container ol")
-      $ol.html("")
-
-      data.forEach(function(trip) {
-          $ol.append("<li>" + trip.location + "</li>")
-
-      });
-    });
-  });
-});
+// $(function () {
+//   $(".backpack-details").on("click", function(e) {
+//     e.preventDefault()
+//
+//     $.get(this.href + ".json", function(data) {
+//       var $ol = $("div.backpack-container ol")
+//       $ol.html("")
+//
+//       data.forEach(function(trip) {
+//           $ol.append("<li>" + trip.location + "</li>")
+//
+//       });
+//     });
+//   });
+// });

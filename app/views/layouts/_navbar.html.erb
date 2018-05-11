@@ -5,8 +5,8 @@
           <%= link_to "Sign in", new_user_session_path %>
           <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
         <% else %>
-           <%= link_to "My Trips",  trips_path, class: "all-trips" %>
-           <%= link_to "My Gear", items_path %>
+           <%= link_to "My Trips",  trips_path, class: "all-trips"  %>
+           <%= link_to "My Gear", items_path  %>
            <%= link_to "Create Gear", new_item_path %>
            <%= link_to "Create Trip", new_trip_path %>
 
