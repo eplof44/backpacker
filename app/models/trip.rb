@@ -1,7 +1,7 @@
 class Trip < ApplicationRecord
 
+  has_many  :backpacks
 belongs_to :user, required: false
-has_many  :backpacks
 has_many  :items, through: :backpacks
 
 validates :date, presence: true

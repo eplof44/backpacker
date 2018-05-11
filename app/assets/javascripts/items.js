@@ -1,43 +1,34 @@
-// $(document).ready(function () {
-//
-//   getItems()
-// })
-//
+// 
+// //create object of item
 // function Item(item) {
-//     this.id = item.id
-//     this.name = item.name
-//     this.item_weight= this.item_weight
-//     this.value = item.value
+//   this.id = item.id
+//   this.name = item.name
+//   this.item_weight = item.item_weight
+//   this.value = item.value
 // }
 //
-// //create protoytype method to generate link to trip to show trips on index page with a link
+// //prototype
+//
 // Item.prototype.indexTemplate = function() {
 //     let itemHtml = `
-//     <a href="/item/${ this.id }" data-id="${this.id}">
-//      <li> ${ item.name }</li>
+//     <a href="/items/${ this.id }" data-id="${this.id}">
+//       <h3>${ this.name }</h3>
 //     </a>
 //     `
 //     return itemHtml
 // }
 //
-// //render all trips via json
-// function getItems() {
-//     $("a.backpack-details").on("click", function(e) {
-//         e.preventDefault()
-//         $('.backpack-container').html('')
+// $(function () {
+//   $(".all-items").on("click", function(e) {
+//     e.preventDefault()
 //
-//         $.getJSON(this.href, function(itemsData) {
-//             renderItems(itemsData)
-//         })
-//     })
-// }
+//     $.get(this.href + ".json", function(data) {
+//       var $ol = $("div.items-container ol")
+//       $ol.html("")
+//       data.forEach(function(item) {
+//           $ol.append(tripHtml)
 //
-// //append trip link to dom when index trips are loaded
-// function renderItems(itemsData) {
-//   console.log(itemsData)
-//     itemsData.forEach(item => {
-//         let newTrip = new Trip(item)
-//         let itemHtml = newItem.indexTemplate()
-//         $('.backpack-container').append(itemHtml)
-//     })
-// }
+//       });
+//     });
+//   });
+// });

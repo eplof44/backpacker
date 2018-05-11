@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-has_many :backpacks
+has_many :backpacks 
 has_many  :trips, through: :backpacks
 belongs_to :user, required: false
 
