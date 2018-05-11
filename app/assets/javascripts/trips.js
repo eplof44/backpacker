@@ -33,23 +33,22 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
+      $('.tripItems').text(data["trip.items"]);
+
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
     });
   });
 })
 
-
+// function getItems() {
+//   $('.tripItems').append("hey")
+// };
 //can't get items to load
-
-
-// function renderItems(item) {
-//     let itemsHtml = ''
-//     items.forEach(function(item) {
-//         itemsHtml += `<li>${item.name}</li>`
-//     })
-//
-//     $('.tripItems').html(itemsHtml)
-// }
-//
-// renderItems(item);
+// function getItems(item){
+//   var string = '';
+//   $.getJSON("trips.html", function(data){
+//       $.each(data, function(k, v) {
+//         $('.tripItems').append(string);
+// });
+//   });
