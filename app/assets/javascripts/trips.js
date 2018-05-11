@@ -1,5 +1,30 @@
 
 
+
+$(function () {
+  $(".all-trips").on("click", function(e) {
+    e.preventDefault()
+
+    $.get(this.href + ".json", function(data) {
+      var $ol = $("div.trips-container ol")
+      $ol.html("")
+      let tripHtml = `
+    <a href="/trips/${ this.id }"  >
+      <h3>${ this.location }</h3>
+    </a>
+    `
+      data.forEach(function(trip) {
+          $ol.append(tripHtml)
+
+      });
+    });
+  });
+});
+
+
+
+
+
 $(function () {
   $(".js-back").on("click", function(e) {
     e.preventDefault()
@@ -44,11 +69,20 @@ $(function () {
 })
 
 
-$(function(){
-    // use Jquery event handler for whn link is clicked
-  $("a.backpack-details").on("click", function(e) {
+
+
+$(function () {
+  $(".backpack-details").on("click", function(e) {
     e.preventDefault()
 
-    $('.trips-container').append('chicken feet');
+    $.get(this.href + ".json", function(data) {
+      var $ol = $("div.backpack-container ol")
+      $ol.html("")
+
+      data.forEach(function(trip) {
+          $ol.append("<li>" + trip.location + "</li>")
+
+      });
+    });
+  });
 });
-})
