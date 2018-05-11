@@ -11,11 +11,7 @@ class ItemsController < ApplicationController
      end
 
   def show
-    @item = Item.find(params[:id])
-     respond_to do |format|
-       format.html { render :show }
-       format.json { render json: @item}
-     end
+    @items = Item.all.where(user: current_user)
   end
 
   def new
