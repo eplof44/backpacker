@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
 
-
-belongs_to :backpack, required: false
+has_many :backpacks 
 has_many  :trips, through: :backpacks
 belongs_to :user, required: false
+
 
 validates :name, presence: true
 validates :item_weight, numericality: true

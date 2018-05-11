@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+
   getTrips()
 })
 
@@ -28,6 +29,9 @@ Trip.prototype.indexTemplate = function() {
 //render all trips via json
 function getTrips() {
     $("a.all-trips").on("click", function(e) {
+        $('.main').removeClass('splash-container')
+        $('.main').addClass('inner')
+        $('.main').html('')
         e.preventDefault()
         $('#trips-container').html('')
 
@@ -42,7 +46,7 @@ function renderTrips(tripsData) {
     tripsData.forEach(trip => {
         let newTrip = new Trip(trip)
         let tripHtml = newTrip.indexTemplate()
-        $('#trips-container').append(tripHtml)
+        $('.main').append(tripHtml)
     })
 }
 

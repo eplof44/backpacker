@@ -11,12 +11,9 @@
 
 </head>
 <body>
-  <div class = "inner">
-
-    <%= render 'layouts/navbar' %>
-
-      <%= yield %>
-
+  <%= render 'layouts/navbar' %>
+  <div class = "main <%= request.path == '/' ? 'splash-container' : 'inner'  %>">
+    <%= yield %>
   </div>
 
 </body>
