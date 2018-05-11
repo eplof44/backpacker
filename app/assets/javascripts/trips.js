@@ -50,8 +50,7 @@ function renderTrips(tripsData) {
     })
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 //trying to get items to display on items show page
 $(function () {
   $(".backpack-details").on("click", function(e) {
@@ -63,10 +62,7 @@ $(function () {
 
 
 
-=======
->>>>>>> parent of ad70476... attempt at adding items to trip not working still
-=======
->>>>>>> parent of ad70476... attempt at adding items to trip not working still
+
 //trip show page previous button
 $(function () {
   $(".js-back").on("click", function(e) {
