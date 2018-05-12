@@ -24,6 +24,8 @@ Trip.prototype.indexTemplate = function() {
     return tripHtml
 }
 
+
+
 //render all trips via json
 function getTrips() {
     $("a.all-trips").on("click", function(e) {
@@ -42,8 +44,11 @@ function renderTrips(tripsData) {
         let newTrip = new Trip(trip)
         let tripHtml = newTrip.indexTemplate()
         $('#trips-container').append(tripHtml)
+
     })
 }
+
+
 
 
 
@@ -89,7 +94,6 @@ $(function () {
 
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
-
     });
   });
 })
