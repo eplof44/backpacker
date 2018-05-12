@@ -52,7 +52,7 @@ $(function () {
 
 $(function () {
   $(".js-items-back").on("click", function() {
-    var backId = parseInt($(".js-items-back").attr("data-id")) - 1;
+    var backId = parseInt($(".js-items-next").attr("data-id")) - 1;
     $.get("/items/" + backId + ".json", function(data) {
       $(".itemName").text(data["name"]);
       $(".itemWeight").text(data["item_weight"]);
