@@ -12,7 +12,7 @@ function Item(item) {
 Item.prototype.indexTemplate = function() {
     let itemHtml = `
     <a href="/items/${ this.id }" data-id="${this.id}">
-      <h3>${this.name}</h3>
+      <li>${this.name}</li>
     </a>
     `
     return itemHtml

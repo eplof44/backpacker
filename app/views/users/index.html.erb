@@ -1,13 +1,26 @@
-<%= link_to "My Camping Trips",  trips_path, class: "all-trips" %> <br>
+<div class ="splash-subhead">
+
+
+  <%= link_to "My Camping Trips",  trips_path, class: "all-trips" %> <br>
+
+</div>
 
 <div id ="trips-container">
 
 </div>
 
-<br>
+<div class ="splash-subhead">
 
 <%= link_to "My Backpack", items_path, class: "all-items"  %>
 
+</div>
 
 <div id ="items-container">
+</div>
+
+
+<div class ="splash-subhead">
+
+  <%= link_to "Create more gear", new_item_path %><br>
+  <%= link_to "Create another trip", new_trip_path %> <br>
 </div>
