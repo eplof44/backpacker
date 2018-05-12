@@ -8,10 +8,10 @@ function Trip(trip) {
     this.location = trip.location
     this.duration = trip.duration
     this.backpack_size = trip.backpack_size
-    trip.camping_type = trip.camping_type
-    trip.weather = trip.weather
-    trip.user = trip.user
-    trip.items = trip.items
+    this.camping_type = trip.camping_type
+    this.weather = trip.weather
+    this.user = trip.user
+    this.items = trip.items
 }
 
 //create protoytype method to generate link to trip to show trips on index page with a link
