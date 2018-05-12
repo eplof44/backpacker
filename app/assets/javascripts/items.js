@@ -36,3 +36,29 @@ function renderItems(itemsData) {
         $('#items-container').append(itemHtml)
     })
 }
+
+$(function () {
+  $(".js-items-next").on("click", function() {
+    var nextId = parseInt($(".js-items-next").attr("data-id")) + 1;
+    $.get("/items/" + nextId + ".json", function(data) {
+      $(".itemName").text(data["name"]);
+      $(".itemWeight").text(data["item_weight"]);
+      $(".itemValue").text(data["value"]);
+      // re-set the id to current on the link
+      $(".js-items-next").attr("data-id", data["id"]);
+    });
+  });
+});
+
+$(function () {
+  $(".js-items-back").on("click", function() {
+    var backId = parseInt($(".js-items-back").attr("data-id")) - 1;
+    $.get("/items/" + backId + ".json", function(data) {
+      $(".itemName").text(data["name"]);
+      $(".itemWeight").text(data["item_weight"]);
+      $(".itemValue").text(data["value"]);
+      // re-set the id to current on the link
+      $(".js-items-back").attr("data-id", data["id"]);
+    });
+  });
+});

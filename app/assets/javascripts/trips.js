@@ -8,10 +8,10 @@ function Trip(trip) {
     this.location = trip.location
     this.duration = trip.duration
     this.backpack_size = trip.backpack_size
-    this.camping_type = trip.camping_type
-    this.weather = trip.weather
-    this.user = trip.user
-    this.items = trip.items
+    trip.camping_type = trip.camping_type
+    trip.weather = trip.weather
+    trip.user = trip.user
+    trip.items = trip.items
 }
 
 //create protoytype method to generate link to trip to show trips on index page with a link
@@ -45,14 +45,17 @@ function renderTrips(tripsData) {
     })
 }
 
+
+
+
 //trip show page previous button
 $(function () {
   $(".js-back").on("click", function(e) {
-    e.preventDefault()
-    var nextId = parseInt($(".js-next").attr("data-id")) - 1;
-    $.getJSON("/trips/" + nextId + ".json", function(data) {
 
-      let id = data["id"]
+    var backId = parseInt($(".js-next").attr("data-id")) - 1;
+    $.getJSON("/trips/" + backId + ".json", function(data) {
+
+
       $(".tripLocation").text(data["location"]);
       $(".tripDate").text(data["date"]);
       $(".tripDuration").text(data["duration"]);
@@ -62,7 +65,8 @@ $(function () {
       $(".tripWeight").text(data["current_backpack_weight"]);
 
       // re-set the id to current on the link
-      $(".js-next").attr("data-id", data["id"]);
+      $(".js-back").attr("data-id", data["id"]);
+
     });
   });
 })
@@ -70,11 +74,11 @@ $(function () {
 //trip show page next button
 $(function () {
   $(".js-next").on("click", function(e) {
-    e.preventDefault()
+
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.getJSON("/trips/" + nextId + ".json", function(data) {
 
-      let id = data["id"]
+
       $(".tripLocation").text(data["location"]);
       $(".tripDate").text(data["date"]);
       $(".tripDuration").text(data["duration"]);
@@ -85,6 +89,7 @@ $(function () {
 
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
+
     });
   });
 })

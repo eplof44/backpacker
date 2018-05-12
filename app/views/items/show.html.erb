@@ -1,9 +1,11 @@
 
-<h2 div class ="content-head"> <%= @item.name %> </h2>
-<h2 div class ="content-head"> Weight: <%= @item.item_weight %> </h2>
-<h2 div class ="content-head"> Value: <%= @item.value %> </h2>
+<h2 div class ="content-head"> <span class = "itemName"> <%= @item.name %> </span> </h2>
+<h2 div class ="content-head"> Weight:  <span class = "itemWeight"> <%= @item.item_weight %> </span> </h2>
+<h2 div class ="content-head"> Value:  <span class = "itemValue"> <%= @item.value %> </span> </h2>
 
+<a href="#" class="js-items-back" data-id="<%=@item.id%>">Previous Item</a> <br>
 
+<a href="#" class="js-items-next" data-id="<%=@item.id%>">Next Item</a>
 
 <div class ="splash-subhead">
 
