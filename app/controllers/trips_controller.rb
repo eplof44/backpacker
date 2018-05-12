@@ -47,7 +47,7 @@ end
 
   def destroy
     @trip = Trip.find(params[:id]).destroy
-    redirect_to trips_url
+    redirect_to users_url
   end
 
 

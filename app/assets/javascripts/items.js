@@ -62,3 +62,23 @@ $(function () {
     });
   });
 });
+
+
+
+
+//create item form post
+$(function () {
+    $('#new_item').submit(function(event) {
+      //prevent form from submitting the default way
+      event.preventDefault();
+      event.stopPropagation();
+      var values = $(this).serialize();
+      var posting = $.post('/items', values);
+      posting.done(function(data) {
+        var item = data;
+        $("#itemName").text(item["name"]);
+        $("#itemWeight").text(item["item_weight"]);
+        $("#itemValue").text(item["value"]);
+      });
+    });
+});

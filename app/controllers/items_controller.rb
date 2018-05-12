@@ -23,14 +23,16 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.user = current_user
-    if @item.save
-      redirect_to item_path @item.id
-    else
-      flash[:notice] = "The item couldn't be saved"
-      render 'new'
-    end
+    @item = Item.create(item_params)
+     render json: @item, status: 201
+    # @item = Item.new(item_params)
+    # @item.user = current_user
+    # if @item.save
+    #   redirect_to item_path @item.id
+    # else
+    #   flash[:notice] = "The item couldn't be saved"
+    #   render 'new'
+    # end
   end
 
   def edit
@@ -50,7 +52,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id]).destroy
-    redirect_to items_url
+    redirect_to users_url
   end
 
 
