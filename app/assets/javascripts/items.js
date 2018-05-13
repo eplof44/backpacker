@@ -63,22 +63,53 @@ $(function () {
   });
 });
 
+Item.prototype.showItem = function(){
+  item = `<h2>${this.name}</h2>
+  <h2>Weight: ${this.item_weight}</h2>
+  <h2>Value: ${this.value}</h2>`
+  return item
+}
+
+
+$(function (){
+  $(document).on('submit', '#new_item', function(e){
+    e.preventDefault();
+    const formPostUrl = $(this).attr("action")
+    const formData = $(this).serialize();
+    $.ajax({
+      url: formPostUrl,
+      method: 'post',
+      data: formData,
+      success: function(data) {
+        const newItem = new Item(data);
+        const showNewItem = newItem.showItem();
+        $("div#itemResult").append(showNewItem)
+        $('#new_item')[0].reset();
+      },
+      error: function(response) {
+        $('div#reviewErrors').html("Sorry, there was an error. Please try again.")
+      }
+    });
+  });
+})
 
 
 
 //create item form post
-$(function () {
-    $('#new_item').submit(function(event) {
-      //prevent form from submitting the default way
-      event.preventDefault();
-      event.stopPropagation();
-      var values = $(this).serialize();
-      var posting = $.post('/items', values);
-      posting.done(function(data) {
-        var item = data;
-        $("#itemName").text(item["name"]);
-        $("#itemWeight").text(item["item_weight"]);
-        $("#itemValue").text(item["value"]);
-      });
-    });
-});
+// $(function () {
+//     $('#new_item').submit(function(event) {
+//       //prevent form from submitting the default way
+//       event.preventDefault();
+//       event.stopPropagation();
+//       var values = $(this).serialize();
+//       var posting = $.post('/items', values);
+//       posting.done(function(data) {
+//         var item = data;
+//         resetFormFields();
+//         $("#itemName").text(item["name"]);
+//         $("#itemWeight").text(item["item_weight"]);
+//         $("#itemValue").text(item["value"]);
+//       });
+//       });
+//     });
+//
