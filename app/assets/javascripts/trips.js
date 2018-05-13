@@ -1,5 +1,6 @@
 $(document).ready(function () {
   getTrips()
+  displayTripItems()
 })
 
 //create Javascript model object
@@ -48,9 +49,30 @@ function renderTrips(tripsData) {
     })
 }
 
+Trip.prototype.showItemTemplate = function() {
+  let itemHTML = `<u>${ this.name }</u>`
+  this.items.forEach(function(item){
 
+    let id = this.id
+    let itemId = item.id
+    let itemHTML = `<p><a href="/items/${itemId}">${item.name}</a></p>`
+  })
+}
 
+function displayTripItems(){
+  $(document).on('click', 'a.show-items', function(e){
+    e.preventDefault();
+    console.log("is this working?");
+    let id = $(this).attr('data-id')
+    $.getJSON(`/items/${id}.json`, appendShowItems)
+  })
+}
 
+function appendShowItems(data){
+  let newItem = new Item(data)
+  // let tripHtml  = newItem.showItemTemplate()
+
+}
 
 
 //trip show page previous button
@@ -67,7 +89,7 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
-      $(".tripWeight").text(data["current_backpack_weight"]);
+      // $(".tripWeight").text(data["current_backpack_weight"]);
 
       // re-set the id to current on the link
       $(".js-back").attr("data-id", data["id"]);
@@ -90,8 +112,8 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
-      $(".tripWeight").text(data["current_backpack_weight"]);
-
+      // $(".tripWeight").text(data["current_backpack_weight"]);
+      $(".tripItems").text(data["ah"]);
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
     });
