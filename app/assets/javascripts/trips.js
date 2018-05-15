@@ -59,19 +59,20 @@ Trip.prototype.showItemTemplate = function() {
   })
 }
 
+function appendShowItems(data){
+  data.forEach(item => {
+  let newItem = new Item(data)
+  let tripHtml  = newItem.showItemTemplate()
+})
+}
+
 function displayTripItems(){
   $(document).on('click', 'a.show-items', function(e){
     e.preventDefault();
-    console.log("is this working?");
+    // console.log("is this working?");
     let id = $(this).attr('data-id')
     $.getJSON(`/items/${id}.json`, appendShowItems)
   })
-}
-
-function appendShowItems(data){
-  let newItem = new Item(data)
-  // let tripHtml  = newItem.showItemTemplate()
-
 }
 
 
@@ -81,7 +82,6 @@ $(function () {
 
     var backId = parseInt($(".js-next").attr("data-id")) - 1;
     $.getJSON("/trips/" + backId + ".json", function(data) {
-
 
       $(".tripLocation").text(data["location"]);
       $(".tripDate").text(data["date"]);
@@ -104,7 +104,6 @@ $(function () {
 
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.getJSON("/trips/" + nextId + ".json", function(data) {
-
 
       $(".tripLocation").text(data["location"]);
       $(".tripDate").text(data["date"]);

@@ -70,7 +70,7 @@ Item.prototype.showItem = function(){
   return item
 }
 
-
+//create new item
 $(function (){
   $(document).on('submit', '#new_item', function(e){
     e.preventDefault();
@@ -92,24 +92,3 @@ $(function (){
     });
   });
 })
-
-
-
-//create item form post
-// $(function () {
-//     $('#new_item').submit(function(event) {
-//       //prevent form from submitting the default way
-//       event.preventDefault();
-//       event.stopPropagation();
-//       var values = $(this).serialize();
-//       var posting = $.post('/items', values);
-//       posting.done(function(data) {
-//         var item = data;
-//         resetFormFields();
-//         $("#itemName").text(item["name"]);
-//         $("#itemWeight").text(item["item_weight"]);
-//         $("#itemValue").text(item["value"]);
-//       });
-//       });
-//     });
-//
