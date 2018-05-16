@@ -1,6 +1,5 @@
 $(document).ready(function () {
   getTrips()
-  displayTripItems()
 })
 
 //create Javascript model object
@@ -93,3 +92,10 @@ $(function () {
     });
   });
 })
+
+//show/hide buttons on trips create format
+$(document).ready(function(){
+    $("#gear-form-button").click(function(){
+      $("#inner-gear").show();
+    });
+});

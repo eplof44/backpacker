@@ -11,7 +11,7 @@
 <% end %>
 
 <div class= "l-box-lrg pure-u-1 pure-u-md-2-5 pure-form">
-
+  
   <%= form_for @trip do |f| %>
   <%= f.label :date %>:
   <%= f.date_field :date %><br />
@@ -26,23 +26,23 @@
   <%= f.label :weather %>:
   <%= f.text_field :weather %><br />
 
-<div id = "inner-item-form">
-  <h3> Add New Gear to Backpack</h3>
-  <% 3.times.each do %>
-
-  <%= f.fields_for :items, @trip.items.build(user_id:current_user.id) do |a| %>
+  <button type="button" id="gear-form-button">Add New Gear </button> </br>
+  <div id="inner-gear">
+    <%= f.fields_for :items, @trip.items.build(user_id:current_user.id) do |a| %>
     <%= a.hidden_field :user_id, value: current_user.id %>
     <label> Name </label> <%= a.text_field :name %><br /><br />
     <label> Weight (in pounds)</label>  <%= a.text_field :item_weight %><br /><br />
-    <label> Value (1 to 5) </label> <%= a.text_field :value %><br /><br />
-  <% end %>
+    <label> Value (1 to 5) </label> <%= a.text_field :value %>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
+<div class= "l-box-lrg pure-u-1 pure-u-md-2-5 pure-form">
 
   <h3> Add More of Your Created Gear </h3>
   <%= collection_check_boxes :trip, :item_ids, current_user.items, :id, :name %>
-<br>
-    <%= f.submit "Submit" %>
-  </div>
-  <% end %>
+  <br>
+  <%= f.submit "Submit" %>
+</div>
+<% end %>
+</div>
