@@ -49,33 +49,6 @@ function renderTrips(tripsData) {
     })
 }
 
-Trip.prototype.showItemTemplate = function() {
-  let itemHTML = `<u>${ this.name }</u>`
-  this.items.forEach(function(item){
-
-    let id = this.id
-    let itemId = item.id
-    let itemHTML = `<p><a href="/items/${itemId}">${item.name}</a></p>`
-  })
-}
-
-function appendShowItems(data){
-  data.forEach(item => {
-  let newItem = new Item(data)
-  let tripHtml  = newItem.showItemTemplate()
-})
-}
-
-function displayTripItems(){
-  $(document).on('click', 'a.show-items', function(e){
-    e.preventDefault();
-    // console.log("is this working?");
-    let id = $(this).attr('data-id')
-    $.getJSON(`/items/${id}.json`, appendShowItems)
-  })
-}
-
-
 //trip show page previous button
 $(function () {
   $(".js-back").on("click", function(e) {
