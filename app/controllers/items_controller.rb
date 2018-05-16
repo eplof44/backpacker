@@ -23,17 +23,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-    #@item = Item.create(item_params)
-    #@item.user = current_user
     @item = current_user.items.build(item_params)
-    # @item = Item.new(item_params)
     if @item.save
-    #   redirect_to item_path @item.id
       render json: @item, status: 201
      else
-    #   flash[:notice] = "The item couldn't be saved"
-    #   render 'new'
-    render json: {message: "Bad request"}
+      render json: {message: "The item couldn't be saved"}
      end
   end
 

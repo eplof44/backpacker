@@ -61,7 +61,6 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
-      // $(".tripWeight").text(data["current_backpack_weight"]);
 
       // re-set the id to current on the link
       $(".js-back").attr("data-id", data["id"]);
@@ -92,6 +91,36 @@ $(function () {
     });
   });
 })
+
+//show trip on new trip form
+Trip.prototype.showTrip = function(){
+  trip = `<h2>${this.location}</h2>`
+  return trip
+}
+
+// render new trip via json
+$(function (){
+  $(document).on('submit', '#new_trip', function(e){
+    e.preventDefault();
+    const formPostUrl = $(this).attr("action")
+    const formData = $(this).serialize();
+    $.ajax({
+      url: formPostUrl,
+      method: 'post',
+      data: formData,
+      success: function(data) {
+        const newTrip = new Trip(data);
+        const showNewTrip = newTrip.showTrip();
+        $("div#tripResult").append(showNewTrip)
+        $('#new_trip')[0].reset();
+      },
+      error: function(response) {
+        $('div#reviewErrors').html("Sorry, there was an error. Please try again.")
+      }
+    });
+  });
+})
+
 
 //show/hide buttons on trips create format
 $(document).ready(function(){

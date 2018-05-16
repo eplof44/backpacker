@@ -11,7 +11,7 @@
 <% end %>
 
 <div class= "l-box-lrg pure-u-1 pure-u-md-2-5 pure-form">
-  
+
   <%= form_for @trip do |f| %>
   <%= f.label :date %>:
   <%= f.date_field :date %><br />
@@ -32,8 +32,7 @@
     <%= a.hidden_field :user_id, value: current_user.id %>
     <label> Name </label> <%= a.text_field :name %><br /><br />
     <label> Weight (in pounds)</label>  <%= a.text_field :item_weight %><br /><br />
-    <label> Value (1 to 5) </label> <%= a.text_field :value %>
-
+    <label> Value (1 to 5) </label> <%= a.text_field :value %><br />
     <% end %>
   </div>
 </div>
@@ -45,4 +44,9 @@
   <%= f.submit "Submit" %>
 </div>
 <% end %>
+
+
+<div id="tripResult">
+</div>
+<div id ="reviewErrors">
 </div>

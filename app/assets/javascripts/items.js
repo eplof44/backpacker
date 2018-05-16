@@ -2,12 +2,15 @@ $(document).ready(function () {
   getItems()
 })
 
+//create object model for item
 function Item(item) {
     this.id = item.id
     this.name = item.name
     this.item_weight = item.item_weight
     this.value = item.value
 }
+
+//create protoytype method to generate link to item to show items on index page with a link
 
 Item.prototype.indexTemplate = function() {
     let itemHtml = `
@@ -18,6 +21,7 @@ Item.prototype.indexTemplate = function() {
     return itemHtml
 }
 
+//render all items via json
 function getItems() {
     $("a.all-items").on("click", function(e) {
         e.preventDefault()
@@ -29,6 +33,8 @@ function getItems() {
     })
 }
 
+//append item link to dom when index trips are loaded
+
 function renderItems(itemsData) {
     itemsData.forEach(item => {
         let newItem = new Item(item)
@@ -37,6 +43,7 @@ function renderItems(itemsData) {
     })
 }
 
+//show next item button
 $(function () {
   $(".js-items-next").on("click", function() {
     var nextId = parseInt($(".js-items-next").attr("data-id")) + 1;
@@ -49,6 +56,8 @@ $(function () {
     });
   });
 });
+
+//show previous item button
 
 $(function () {
   $(".js-items-back").on("click", function() {
@@ -63,6 +72,7 @@ $(function () {
   });
 });
 
+//show item on post page for new item creation
 Item.prototype.showItem = function(){
   item = `<h2>${this.name}</h2>
   <h2>Weight: ${this.item_weight}</h2>
@@ -70,7 +80,7 @@ Item.prototype.showItem = function(){
   return item
 }
 
-//create new item
+//create new item via json post 
 $(function (){
   $(document).on('submit', '#new_item', function(e){
     e.preventDefault();

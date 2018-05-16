@@ -24,15 +24,14 @@ end
   end
 
   def create
-    @trip = Trip.new(trip_params)
-    @trip.user = current_user
+    @trip = current_user.trips.build(trip_params)
     if @trip.save
-      redirect_to trip_path @trip.id
-    else
-      flash[:notice] = "The trip couldn't be saved"
-      render 'new'
-    end
+      render json: @trip, status: 201
+     else
+      render json: {message: "The trip couldn't be saved"}
+     end
   end
+
 
 
   def edit

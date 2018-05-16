@@ -7,10 +7,6 @@
 <h2 div class ="content-head"> Camping Type: <span class ="tripType"> <%= @trip.camping_type %> </span> </h2>
 <h2 div class ="content-head"> Weather: <span class = "tripWeather"> <%= @trip.weather %> </span> </h2>
 
-<a href="#" class="show-items" data-id="<%=@trip.id%>">Show Items</a> <br>
-
-<div class ="tripItems">
-</div>
 
 <% @trip.items.each do |item| %>
 <ul class ="trip-items">
