@@ -104,7 +104,9 @@ $(function () {
 
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.getJSON("/trips/" + nextId + ".json", function(data) {
-
+      $(".trip-items").html("")
+      const listItems = data.items.map(item => `<li>${item.name}</li>`).join('')
+      $('.trip-items').html(listItems)
       $(".tripLocation").text(data["location"]);
       $(".tripDate").text(data["date"]);
       $(".tripDuration").text(data["duration"]);

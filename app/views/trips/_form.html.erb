@@ -26,7 +26,7 @@
   <%= f.label :weather %>:
   <%= f.text_field :weather %><br />
 
-
+<div id = "inner-item-form">
   <h3> Add New Gear to Backpack</h3>
   <% 3.times.each do %>
 
@@ -36,8 +36,9 @@
     <label> Weight (in pounds)</label>  <%= a.text_field :item_weight %><br /><br />
     <label> Value (1 to 5) </label> <%= a.text_field :value %><br /><br />
   <% end %>
-  <% end %>
 
+  <% end %>
+</div>
 
   <h3> Add More of Your Created Gear </h3>
   <%= collection_check_boxes :trip, :item_ids, current_user.items, :id, :name %>
