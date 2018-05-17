@@ -18,17 +18,13 @@
 <% end %>
 
 
-<a href="#" class="js-back" data-id="<%=@trip.id%>">Previous Trip</a> <br>
-
-<a href="#" class="js-next" data-id="<%=@trip.id%>">Next Trip</a>
-
-
-
-
-
 
 
 <div class ="splash-subhead">
+
+  <a href="#" class="js-back" data-id="<%=@trip.id%>">Previous Trip</a> <br>
+
+  <a href="#" class="js-next" data-id="<%=@trip.id%>">Next Trip</a><br>
 
   <%= link_to 'Edit Trip', edit_trip_path(@trip) %> <br>
   <%= link_to "Create Another Trip", new_trip_path %> <br>

@@ -56,6 +56,8 @@ $(function () {
     $.getJSON("/trips/" + backId + ".json", function(data) {
       $(".trip-items").html("")
       const listItems = data.items.map(item => `<li>${item.name}</li>`).join('')
+      console.log(data)
+
       $('.trip-items').html(listItems)
       $(".tripLocation").text(data["location"]);
       $(".tripDate").text(data["date"]);
