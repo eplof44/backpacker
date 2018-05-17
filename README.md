@@ -7,12 +7,11 @@ BackPacker is an app that allows you to track camping trips and what you are pac
 To install, clone or fork this repository, then run `bundle install` from the terminal prompt.
 To create a new version of the database, populate it with seed data, and get started, run the following commands from the terminal prompt:
 
-```ruby
-rake db:drop
-rake db:migrate
-rake db:seed
-rails s
-```
+1. Fork this repository & clone into it from your terminal
+2. CD into the application
+3. Make sure to run 'bundle install' to install all required gem dependencies
+4. Run 'rake db:migrate'
+5. Run 'rails s' and navigate to the localhost port displayed in your terminal.
 
 In your browser, navigate to `localhost:3000`.
 
