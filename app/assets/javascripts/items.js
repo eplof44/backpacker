@@ -11,7 +11,6 @@ function Item(item) {
 }
 
 //create protoytype method to generate link to item to show items on index page with a link
-
 Item.prototype.indexTemplate = function() {
     let itemHtml = `
     <a href="/items/${ this.id }" data-id="${this.id}">
@@ -34,7 +33,6 @@ function getItems() {
 }
 
 //append item link to dom when index trips are loaded
-
 function renderItems(itemsData) {
     itemsData.forEach(item => {
         let newItem = new Item(item)
@@ -58,7 +56,6 @@ $(function () {
 });
 
 //show previous item button
-
 $(function () {
   $(".js-items-back").on("click", function() {
     var backId = parseInt($(".js-items-next").attr("data-id")) - 1;
