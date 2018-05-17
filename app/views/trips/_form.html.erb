@@ -30,8 +30,8 @@
   <div id="inner-gear">
     <%= f.fields_for :items, @trip.items.build(user_id:current_user.id) do |a| %>
     <%= a.hidden_field :user_id, value: current_user.id %>
-    <label> Name </label> <%= a.text_field :name %><br /><br />
-    <label> Weight (in pounds)</label>  <%= a.text_field :item_weight %><br /><br />
+    <label> Name </label> <%= a.text_field :name %><br />
+    <label> Weight (in pounds)</label>  <%= a.text_field :item_weight %><br />
     <label> Value (1 to 5) </label> <%= a.text_field :value %><br />
     <% end %>
   </div>

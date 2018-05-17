@@ -84,7 +84,6 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
-      // $(".tripWeight").text(data["current_backpack_weight"]);
       $(".tripItems").text(data["ah"]);
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);

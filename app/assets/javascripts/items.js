@@ -80,7 +80,7 @@ Item.prototype.showItem = function(){
   return item
 }
 
-//create new item via json post 
+//create new item via json post
 $(function (){
   $(document).on('submit', '#new_item', function(e){
     e.preventDefault();

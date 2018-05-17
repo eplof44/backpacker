@@ -7,6 +7,7 @@
 <h2 div class ="content-head"> Camping Type: <span class ="tripType"> <%= @trip.camping_type %> </span> </h2>
 <h2 div class ="content-head"> Weather: <span class = "tripWeather"> <%= @trip.weather %> </span> </h2>
 
+<h2 div class ="content-head"> This is what you have packed.</h2>
 
 <% @trip.items.each do |item| %>
 <ul class ="trip-items">
@@ -15,7 +16,6 @@
   </li>
 </ul>
 <% end %>
-
 
 
 <a href="#" class="js-back" data-id="<%=@trip.id%>">Previous Trip</a> <br>
