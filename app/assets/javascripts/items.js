@@ -6,7 +6,7 @@ $(document).ready(function () {
 function Item(item) {
     this.id = item.id
     this.name = item.name
-    this.item_weight = item.item_weight
+    this.itemWeight = item.item_weight
     this.value = item.value
 }
 
@@ -34,12 +34,14 @@ function getItems() {
 
 //append item link to dom when index trips are loaded
 function renderItems(itemsData) {
-    itemsData.forEach(item => {
+//   const itemsArray = itemsData.filter(item => item.trips[0].id === 16);
+// };
+    itemsData.forEach(itemsData.filter(item => item.trips[0] === 16))
         let newItem = new Item(item)
         let itemHtml = newItem.indexTemplate()
         $('#items-container').append(itemHtml)
-    })
-}
+
+  }
 
 //show next item button
 $(function () {

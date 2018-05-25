@@ -7,8 +7,8 @@ function Trip(trip) {
     this.id = trip.id
     this.location = trip.location
     this.duration = trip.duration
-    this.backpack_size = trip.backpack_size
-    trip.camping_type = trip.camping_type
+    this.backpackSize = trip.backpack_size
+    trip.campingType = trip.camping_type
     trip.weather = trip.weather
     trip.user = trip.user
     trip.items = trip.items
@@ -87,7 +87,6 @@ $(function () {
       $(".tripBackpack").text(data["backpack_size"]);
       $(".tripType").text(data["camping_type"]);
       $(".tripWeather").text(data["weather"]);
-      $(".tripItems").text(data["ah"]);
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
     });
