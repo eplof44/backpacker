@@ -40,7 +40,13 @@ function getTrips() {
 
 //append trip link to dom when index trips are loaded
 function renderTrips(tripsData) {
-    tripsData.forEach(trip => {
+
+const sorted = tripsData.sort( function( a, b ) {
+  a = a.location.toLowerCase();
+   b = b.location.toLowerCase();
+   return a < b ? -1 : a > b ? 1 : 0;
+});
+    sorted.forEach(trip => {
         let newTrip = new Trip(trip)
         let tripHtml = newTrip.indexTemplate()
         $('#trips-container').append(tripHtml)

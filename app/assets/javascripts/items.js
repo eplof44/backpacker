@@ -34,14 +34,15 @@ function getItems() {
 
 //append item link to dom when index trips are loaded
 function renderItems(itemsData) {
-//   const itemsArray = itemsData.filter(item => item.trips[0].id === 16);
+  const itemsFilter = itemsData.filter(item => item.trips.id === 16);
+  console.log(itemsFilter)
 // };
-    itemsData.forEach(itemsData.filter(item => item.trips[0] === 16))
+    itemsFilter.forEach(item => {
         let newItem = new Item(item)
         let itemHtml = newItem.indexTemplate()
         $('#items-container').append(itemHtml)
-
-  }
+    })
+}
 
 //show next item button
 $(function () {
