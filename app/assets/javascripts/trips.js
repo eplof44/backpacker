@@ -41,17 +41,16 @@ function getTrips() {
 //append trip link to dom when index trips are loaded
 function renderTrips(tripsData) {
 
-const sorted = tripsData.sort( function( a, b ) {
-  a = a.location.toLowerCase();
-   b = b.location.toLowerCase();
-   return a < b ? -1 : a > b ? 1 : 0;
-});
-    sorted.forEach(trip => {
-        let newTrip = new Trip(trip)
-        let tripHtml = newTrip.indexTemplate()
-        $('#trips-container').append(tripHtml)
+  const sorted = tripsData.sort( function( a, b ) {
+    return a.location.toLowerCase().localeCompare(b.location.toLowerCase());
+  });
 
-    })
+  sorted.forEach(trip => {
+    let newTrip = new Trip(trip)
+    let tripHtml = newTrip.indexTemplate()
+    $('#trips-container').append(tripHtml)
+
+  })
 }
 
 //trip show page previous button

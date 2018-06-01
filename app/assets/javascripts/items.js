@@ -34,10 +34,9 @@ function getItems() {
 
 //append item link to dom when index trips are loaded
 function renderItems(itemsData) {
-  const itemsFilter = itemsData.filter(item => item.trips.id === 16);
-  console.log(itemsFilter)
-// };
-    itemsFilter.forEach(item => {
+
+  const filtered = itemsData.filter(item => item[trips][0][id] === 16);
+    filtered.forEach(item => {
         let newItem = new Item(item)
         let itemHtml = newItem.indexTemplate()
         $('#items-container').append(itemHtml)
